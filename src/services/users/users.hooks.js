@@ -1,4 +1,5 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
+const hooks = require('feathers-authentication-hooks');
 
 const {
   hashPassword, protect
@@ -7,8 +8,8 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
-    get: [ authenticate('jwt') ],
+    find: [ authenticate('jwt'),hooks.queryWithCurrentUser({ idField: '_id', as: '_id' }) ],
+    get: [ authenticate('jwt'),hooks.queryWithCurrentUser({ idField: '_id', as: '_id' }) ],
     create: [hashPassword()],
     update: [ hashPassword(),  authenticate('jwt') ],
     patch: [ hashPassword(),  authenticate('jwt') ],

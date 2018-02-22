@@ -36,7 +36,7 @@
     "@feathersjs/feathers": "^3.0.2",
     "compression": "^1.7.1",
     "cors": "^2.8.4",
-    "feathers-authentication-hooks": "^0.1.6",
+    "feathers-authentication-hooks": "^0.1.7",
     "feathers-mongoose": "^6.0.0",
     "helmet": "^3.9.0",
     "mongoose": "^5.0.0-rc0",
